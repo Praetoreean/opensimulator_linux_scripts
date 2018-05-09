@@ -1,6 +1,6 @@
 #!/bin/sh
 # wechsele ins OpenSim bin Verzeichnis
-cd /root/opensim/bin  #diva-r08210  #diva-r09000
+cd /opt/opensim/bin  #diva-r08210  #diva-r09000
 while :
 do
 # First start: wait until everything is up - later: avoid frequent triggers
