@@ -1,0 +1,18 @@
+#!/bin/sh
+# Autostart Opensim.exe with ubuntu linux
+cd /opt/opensim/bin  #diva-r08210  #diva-r09000
+while :
+do
+sleep 120
+# Try call and ignore the error if it is already running
+running=`ps ax | grep OpenSim.exe | grep -v grep`
+if [ -z "$running" ]
+  then
+    tmux new-session -d -s term -n OpenSim 'env LANG=C mono OpenSim.exe -console=rest'
+  else
+    tmux new-window -n OpenSim -t term:0 'env LANG=C mono OpenSim.exe -console=rest' 2> /dev/null
+#    tmux new-session -d -s term -n OpenSim 'env LANG=C mono OpenSim.exe'
+#  else
+#    tmux new-window -n OpenSim -t term:0 'env LANG=C mono OpenSim.exe' 2> /dev/null
+fi
+done
