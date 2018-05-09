@@ -1,8 +1,9 @@
 #!/bin/sh
-# Autostart Opensim.exe with ubuntu linux
-cd /opt/opensim/bin  #diva-r08210  #diva-r09000
+# wechsele ins OpenSim bin Verzeichnis
+cd /root/opensim/bin  #diva-r08210  #diva-r09000
 while :
 do
+# First start: wait until everything is up - later: avoid frequent triggers
 sleep 120
 # Try call and ignore the error if it is already running
 running=`ps ax | grep OpenSim.exe | grep -v grep`
